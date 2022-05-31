@@ -1,12 +1,12 @@
 import React from "react";
 import { List } from './List.js';
 
-export const Content = () => {
-    return (
+export const Content = () =>  (
     <div>
-        <div> How would you rate our course? 
+        <div> 
+           <p> How would you rate our course? </p>
         </div>
-        <List listLength={2} />
+        <List listLength={10} />
     </div>
     )
-  }
+  

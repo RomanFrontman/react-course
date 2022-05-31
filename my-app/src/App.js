@@ -4,15 +4,17 @@ import { Content } from './Content.js';
 import { Footer } from './Footer.js';
 import { Feedback } from './Feedback.js';
 
+const studentsName = "Roman Chaus"
+
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Header name="Roman Chaus"/>
-        <Content></Content>
+
+        <Header name={studentsName}/>
+        <Content/>
         <Feedback></Feedback>
-        <Footer name="Roman Chaus"/>
-      </header>
+        <Footer name={studentsName}/>
+
 
     </div>
   );

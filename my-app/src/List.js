@@ -1,6 +1,6 @@
 import React from "react";
 
-export const List = ({listLength = 2}) => {
+export const List = ({listLength = 10}) => {
     return (
         <ul>
             {Array.from({ length: listLength }, (_, i) => {
@@ -11,6 +11,6 @@ export const List = ({listLength = 2}) => {
                 </li>
                 );
             })}
-            </ul>
+        </ul>
     )
   }
