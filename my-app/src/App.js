@@ -1,25 +1,64 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState } from "react";
+import { Header } from './Header.js';
+import { Footer } from './Footer.js';
+import { Button } from './Button.js';
+import { FeedbackList } from "./FeedbackList.js";
+import { List } from "./List.js";
 
-function App() {
+
+
+export default function App() {
+  const studentsName = "Roman Chaus"
+  const [feedbackText, setFeedbackText] = useState("");
+  const [rating, setRating] = useState(10);
+  const [feedbackList, setFeedbackList] = useState([]);
+
+const handleInputChange = (event) => {
+  const value = event.target.value;
+  setFeedbackText(value);
+};
+
+const onRatingChange = (event) => {
+  const value = +event.currentTarget.value;
+  setRating(value);
+};
+
+const onButtonClick = () => {
+  setFeedbackList([
+    ...feedbackList,
+    { rate: rating, rateText: feedbackText }
+  ]);
+  setRating(10);
+  setFeedbackText("");
+};
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header name={studentsName}/>
+      <div>
+        <h2>How would you rate our course?</h2>
+      </div>
+      <List
+          listLength={10}
+          rating={rating}
+          onRatingChange={onRatingChange}
+        />
+      <div className="controlling">
+        <input
+          type="text"
+          name="textInput"
+          placeholder='Write your text'
+          value={feedbackText}
+          onChange={handleInputChange}
+        />
+        <Button disabled={!feedbackText} onClick={onButtonClick} 
+        />
+      </div>
+      <br />
+      <FeedbackList list={feedbackList} />
+      <br />
+      <Footer name={studentsName}/>
     </div>
   );
 }
-
-export default App;
