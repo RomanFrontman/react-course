@@ -1,4 +1,5 @@
 import React from "react";
+import './scss/List.scss';
 
 export const List = ({listLength = 10, rating, onRatingChange }) => {
     return (

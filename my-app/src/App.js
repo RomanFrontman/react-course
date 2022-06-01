@@ -1,4 +1,4 @@
-import './App.css';
+import './scss/App.scss';
 import React, { useState } from "react";
 import { Header } from './Header.js';
 import { Footer } from './Footer.js';
@@ -34,26 +34,30 @@ const onButtonClick = () => {
 };
 
   return (
+    
     <div className="App">
       <Header name={studentsName}/>
-      <div>
-        <h2>How would you rate our course?</h2>
-      </div>
-      <List
-          listLength={10}
-          rating={rating}
-          onRatingChange={onRatingChange}
-        />
-      <div className="controlling">
-        <input
-          type="text"
-          name="textInput"
-          placeholder='Write your text'
-          value={feedbackText}
-          onChange={handleInputChange}
-        />
-        <Button disabled={!feedbackText} onClick={onButtonClick} 
-        />
+      <div className="content">
+
+        
+          <h2>How would you rate our course?</h2>
+        
+        <List
+            listLength={10}
+            rating={rating}
+            onRatingChange={onRatingChange}
+          />
+        <div className="controlling">
+          <input
+            type="text"
+            name="textInput"
+            placeholder='Write your text'
+            value={feedbackText}
+            onChange={handleInputChange}
+          />
+          <Button disabled={!feedbackText} onClick={onButtonClick} 
+          />
+        </div>
       </div>
       <br />
       <FeedbackList list={feedbackList} />
