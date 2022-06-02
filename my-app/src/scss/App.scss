@@ -1,0 +1,33 @@
+@import './footer', './header', './button', './list', './FeedbackList.scss';
+
+* {
+  margin: 0 auto;
+}
+.App {
+  text-align: center;
+  background-color: #202142;
+  border-radius: 12px;
+  padding: 30px ;
+ .content {
+   background-color: white;
+   border-radius: 12px;
+   margin-bottom: 30px;
+
+    h2{
+      color: black;
+      padding: 40px;
+      border-radius: 12px;
+    }
+  }
+  
+  .controlling input {
+    font-size: 20px;
+    background-color: white;
+    width: 90%;
+    height: 64px;
+    border-radius: 12px;
+    border-color: rgb(213, 194, 194);
+    margin-bottom: 30px;
+  }
+}
+
